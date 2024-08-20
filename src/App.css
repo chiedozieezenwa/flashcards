@@ -1,4 +1,4 @@
-/* * {
+* {
   box-sizing: border-box;
 }
 
@@ -31,8 +31,4 @@ div.selected {
   background-color: #e03131;
   color: #fff;
   font-weight: bold;
-} */
-
-.app {
-  color: black;
 }

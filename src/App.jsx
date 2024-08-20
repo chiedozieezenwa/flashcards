@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import './App.css'
 
 const App = () => {
+
   return (
     <div className="app">
       <FlashCards />
@@ -45,7 +47,17 @@ const questions = [
 ];
 
 const FlashCards = () => {
+  const [selectedId, setSelectedId] = useState(null);
+
+  const handleClick = (id) => {
+    setSelectedId(id !== selectedId? id : null)
+  }
+
   return (
-      <div>TODO List</div>
+      <div className='flashcards'>
+        {questions.map((questions)=>
+          <div key={questions.id} onClick={() => handleClick(questions.id)} className={questions.id===selectedId? 'selected' : ""}><p>{questions.id===selectedId? questions.answer : questions.question}</p></div>
+        )}
+      </div>
   );
 }
